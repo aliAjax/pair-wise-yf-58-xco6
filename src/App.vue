@@ -29,7 +29,7 @@ function statusColor(status?: string) { return status === 'rolling' ? 'green' : 
 
 <template>
   <a-config-provider><a-layout class="app-shell">
-    <a-layout-header class="topbar"><div><div class="eyebrow">FEATURE FLAG / PORT 62023</div><h1>{{ $t('title') }}</h1></div><a-space><a-tag :color="online ? 'green' : 'orange'">{{ online ? '控制面在线' : '离线草稿' }}</a-tag><a-button type="primary" @click="createOpen = true">新建功能开关</a-button></a-space></a-layout-header>
+    <a-layout-header class="topbar"><div><div class="eyebrow">FEATURE FLAG / PORT 62023</div><h1>{{ $t('title') }}</h1></div><a-space><a-tag :color="online ? 'green' : 'orange'">{{ online ? '控制面在线' : '离线草稿' }}</a-tag><router-link to="/segments"><a-button>用户分群对账</a-button></router-link><a-button type="primary" @click="createOpen = true">新建功能开关</a-button></a-space></a-layout-header>
     <a-layout-content class="content">
       <a-alert v-if="!online" type="warning" show-icon message="离线状态" description="规则修改保留在浏览器，恢复网络后仍需完成审批才能发布。" class="mb" />
       <a-row :gutter="[18,18]">
